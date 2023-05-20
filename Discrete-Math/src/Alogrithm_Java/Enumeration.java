@@ -85,12 +85,13 @@ public class Enumeration {
     }
 
 
+
+
     public static void main(String[] args) {
 //        System.out.println(calFactorial(3));
 //        int n = 9;
 //        int k = 6;
 //        int[] arr = {1,2,3,4,5,6};
 //        solve1(n, k, arr);
-        permutation(3, new int[]{1, 2, 3});
     }
 }
