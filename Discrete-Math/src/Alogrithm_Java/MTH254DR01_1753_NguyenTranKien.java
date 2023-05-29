@@ -5,7 +5,6 @@ public class MTH254DR01_1753_NguyenTranKien {
      * Liệt kê tập con của tập có 5 phần tử:
      * cam, xoai, quit, oi, chuoi
      */
-    static int total = 0;
     public static void display(String[] arrString, int[] arr, int k){
         for(int i = 0 ; i < k ; i++){
             System.out.print(arrString[arr[i] - 1] + " ");
@@ -16,7 +15,6 @@ public class MTH254DR01_1753_NguyenTranKien {
         do {
             System.out.print("{");
             display(arrString, arr, k);
-            total++;
             System.out.println("}");
             for (i = k; i > 0 && arr[i - 1] == n - k + i; i--) {
             }
@@ -32,13 +30,13 @@ public class MTH254DR01_1753_NguyenTranKien {
 
     public static void main(String[] args) {
         String[] arrString = {"cam", "xoai", "quit", "oi", "chuoi"};
-        for(int i = 0; i <= arrString.length; i++){
+        String[] arrString2 = {"5", "7", "6", "4", "3"};
+        for(int i = 0; i <= arrString2.length; i++){
             int[] arr = new int[i];
             for(int j = 1; j <= i ; j++){
-                arr[j - 1] = j;
+                arr[j - 1] = j;// i =2; arr[0] = 1, arr[1] = 2;
             }
-            solve2(5,i, arr, arrString);
+            solve2(5,i, arr, arrString2);
         }
-        System.out.println(total);
     }
 }
