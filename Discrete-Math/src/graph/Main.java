@@ -44,8 +44,8 @@ public class Main {
                 if(arr[i] == -1)return false;
                 if(arr[i] == 0)end--;
             }
-//            display(arr);
-//            System.out.println();
+            display(arr);
+            System.out.println();
             end--;
             Arrays.sort(arr);
             reverseArray(arr);
@@ -99,8 +99,8 @@ public class Main {
     public static void main(String[] args) {
 //        int[] arr = {3,3,1,1};
 //        int[] arr = {6,5,5,4,3,3,3,2,2};
-        int[] arr = {3,3,2,2,1,1};
-//        int[] arr = {5,4,3,3,2,2,2,1,1,1};
+//        int[] arr = {3,3,2,2,1,1};
+        int[] arr = {5,4,3,3,2,2,2,1,1,1};
 //        System.out.println("Is a simple graph: " + checkSimpleGraph(arr));
         constructGraph(arr);
     }
