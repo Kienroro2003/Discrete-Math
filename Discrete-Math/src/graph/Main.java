@@ -1,5 +1,9 @@
 package graph;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -44,8 +48,8 @@ public class Main {
                 if(arr[i] == -1)return false;
                 if(arr[i] == 0)end--;
             }
-            display(arr);
-            System.out.println();
+//            display(arr);
+//            System.out.println();
             end--;
             Arrays.sort(arr);
             reverseArray(arr);
@@ -53,7 +57,7 @@ public class Main {
         return true;
     }
 
-    public static void constructGraph(int[] arrDegree){
+    public static void constructGraph(int[] arrDegree) throws FileNotFoundException {
         boolean isSimpleGraph = checkSimpleGraph(arrDegree);
         if(isSimpleGraph){
             int n = arrDegree.length;
@@ -96,7 +100,9 @@ public class Main {
         arr[j] = temp;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        System.setIn(new FileInputStream("src/graph/data/MAIN.INP"));
+        System.setOut(new PrintStream(new File("src/graph/data/MAIN.OUT")));
 //        int[] arr = {3,3,1,1};
 //        int[] arr = {6,5,5,4,3,3,3,2,2};
 //        int[] arr = {3,3,2,2,1,1};

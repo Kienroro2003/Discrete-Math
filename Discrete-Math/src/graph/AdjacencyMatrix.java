@@ -1,6 +1,8 @@
 package graph;
 
+import java.io.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class AdjacencyMatrix {
 
@@ -47,8 +49,16 @@ public class AdjacencyMatrix {
         }
     }
 
-    public static void main(String[] args) {
-        int[] degrees = {3,3,2,2,1,1};
+    public static void main(String[] args) throws FileNotFoundException {
+        System.setIn(new FileInputStream("src/graph/data/DEGREE_VERTICES.INP"));
+        System.setOut(new PrintStream(new File("src/graph/data/DEGREE_VERTICES.OUP")));
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] degrees = new int[n];
+        for(int i = 0 ; i < n ; i++){
+            degrees[i] = scanner.nextInt();
+        }
+
 
         int[][] adjacencyMatrix = createAdjacencyMatrix(degrees);
         if (adjacencyMatrix == null) {
@@ -59,5 +69,6 @@ public class AdjacencyMatrix {
                 System.out.println(Arrays.toString(row));
             }
         }
+        System.out.println("Finished your programming");
     }
 }
